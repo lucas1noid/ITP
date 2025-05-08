@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int Na[10], Nb[10];
+
+    for (int i = 0; i < 10; i++)
+    {
+        cin >> Na[i];
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        cin >> Nb[i];
+    }
+
+    double Pa[10], Pb[10];
+
+    for (int i = 0; i < 10; i++)
+    {
+        cin >> Pa[i];
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        cin >> Pb[i];
+    }
+    // todos os valores recebidos
+
+    double menorA = Pa[0];
+    double maiorB = Pb[0];
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (menorA > Pa[i])
+        {
+            menorA = Pa[i];
+        }
+        if (maiorB < Pb[i])
+        {
+            maiorB = Pb[i];
+        }
+    }
+    // todos os maximos atribuidos
+
+    cout << "A: ";
+    int testea = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (Pa[i] > 0)
+        {
+            if (Pa[i] > maiorB)
+            {
+                cout << Na[i] << " ";
+                testea++;
+            }
+        }
+    }
+    if (testea == 0)
+    {
+        cout << "sem impedimentos";
+    }
+    cout << endl;
+    
+    cout << "B: ";
+    int testeb = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (Pb[i] < 0)
+        {
+            if (Pb[i] < menorA)
+            {
+                cout << Nb[i] << " ";
+                testeb++;
+            }
+        }
+    }
+    if (testeb == 0)
+    {
+        cout << "sem impedimentos";
+    }
+    cout << endl;
+
+    return 0;
+}
