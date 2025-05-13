@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int L, C;
+    cin >> L >> C;
+    int j; cin >> j;
+    int matriz[L][C];
+    for (int i = 0; i < L; i++)
+    {
+        for (int k = 0; k < C; k++)
+        {
+            cin >> matriz[i][k];
+            matriz[i][k] *=  j;
+        }
+    }
+    
+    for (int i = 0; i < L; i++)
+    {
+        for (int k = 0; k < C; k++)
+        {
+            cout << matriz[i][k] << " ";
+        }
+     cout << endl;   
+    }
+    return 0;
+}
